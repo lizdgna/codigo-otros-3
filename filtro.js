@@ -1,5 +1,7 @@
 // Tenemos un li de productos
 
+
+//Problema principal:no funciona el boton de filtrar
 const productos = [
   {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
   {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg"},
@@ -8,9 +10,12 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
+const li = document.getElementById("lista-de-productos"); ///Cambiar el getElement by id 
 const $i = document.querySelector('.input');
 
+
+function displayProductos(productos){ //Faltaba crear la funcion display productos,ya que solo se 
+  //mandaba llamar pero no estaba creada
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
   d.classList.add("producto")
@@ -27,7 +32,7 @@ for (let i = 0; i < productos.length; i++) {
 
   li.appendChild(d)
 }
-
+}
 displayProductos(productos)
 const botonDeFiltro = document.querySelector("button");
 
